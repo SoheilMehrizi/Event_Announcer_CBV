@@ -11,7 +11,7 @@ class Lecturer (models.Model):
     Contains the lecturer info instructions.
     # it can only add or create by superuser
     """
-    Name = models.CharField(max_length=50, unique_for_year=True)
+    name = models.CharField(max_length=50)
     Image = models.URLField(max_length=255, null= True, blank=True)
     Resume_link = models.URLField(max_length=255, null= True, blank=True)
     Bio = models.TextField(null=True, blank=True)
@@ -21,4 +21,4 @@ class Lecturer (models.Model):
     updated_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) :
-        return f"{self.Name}"
+        return f"{self.name}"

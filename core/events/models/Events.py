@@ -22,12 +22,12 @@ class Events (models.Model):
     Event_end = models.DateTimeField()
     Is_published = models.BooleanField(default=False)
     Expired = models.BooleanField(default=False)
-    Published_data = models.DateTimeField()
+    Published_date = models.DateTimeField()
     Created_date = models.DateTimeField(auto_now=True)
     updated_date = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f"{self.Title}, {self.Category.Name}, {self.Capacity}"
+        return f"{self.Category.Name}:{self.Title}"
 
 
 class Category(models.Model):
@@ -37,5 +37,7 @@ class Category(models.Model):
     """
     Name = models.CharField(max_length=55)
 
+    Created_date = models.DateTimeField(auto_now=True)
+    Updated_date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.Name

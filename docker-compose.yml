@@ -4,11 +4,11 @@ services:
     image: postgres
     container_name: Postgres_db
     volumes:
-      - ./data/db:/var/lib/db/data
+      - ./data/db/Postgres:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=Postgres
+      - POSTGRES_USER=Postgres
+      - POSTGRES_PASSWORD=Postgres
   cache:
     image: redis
     container_name: Redis_Cachedb
@@ -25,9 +25,9 @@ services:
       - "8000:8000"
     
     environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_NAME=Postgres
+      - POSTGRES_USER=Postgres
+      - POSTGRES_PASSWORD=Postgres
       - SECRET_KEY=django-insecure-)38w+4_z%!vfuf6pky!@vs*dnz@u3=wjww&%nb8p4147r__&#x
       - DEBUG=True
     depends_on:

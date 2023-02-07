@@ -1,6 +1,6 @@
 from django.db import models
 from .Events import Events
-from .lecturer import Lecturer
+from .Lecturer import Lecturer
 
 
 class Event_programs(models.Model):
@@ -22,4 +22,4 @@ class Event_programs(models.Model):
     Updated_date = models.DateTimeField(auto_now_add=True)
 
     def __ste__(self):
-        return f"{self.Event.Title}, {self.Lecturer.Name}, {self.Available}, {self.Created_date}, {self.Updated_date}"
+        return f"{self.Event.Title}, {self.Topic}"
