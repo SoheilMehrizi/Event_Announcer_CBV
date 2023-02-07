@@ -9,11 +9,11 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  cash:
+  cache:
     image: redis
-    container_name: Redis_Cashdb
+    container_name: Redis_Cachedb
     volumes:
-      - ./data/db/cash:/data
+      - ./data/db/cache:/data
   
   backend:
     build: .
